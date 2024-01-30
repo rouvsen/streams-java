@@ -1,7 +1,9 @@
 package com.example.streamsjava;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class Clazz {
@@ -65,5 +67,30 @@ public class Clazz {
                 .limit(1)
                 .forEach(System.out::println);
 
+        System.out.println("""
+                    
+                    ***********************                
+                    ***********************                
+                """);
+
+        //Ex 5, count (Terminal operation)
+        String[] arr = {"Alex", "Ben", "Charlie", "April", "Edward"};
+        Stream<String> stream = Arrays.stream(arr);
+        long l = stream.count();
+        System.out.println("Sum of Stream elements: " + l);
+
+        System.out.println("""
+                    
+                    ***********************                
+                    ***********************                
+                """);
+
+        //Ex 6, How can I use Map with Streams? Convert to Set because Set is a Collection > EntrySet() < Set View
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Alex", 22); map.put("David", 27); map.put("Mary", 30);
+        long mapCount = map.entrySet().stream().count();
+        long mapCount2 = map.entrySet().size();
+        System.out.println("Size of Map: " + mapCount);
+        System.out.println("Size of Map: " + mapCount2);
     }
 }
