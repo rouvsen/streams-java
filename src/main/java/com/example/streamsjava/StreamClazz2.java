@@ -32,7 +32,7 @@ public class StreamClazz2 {
                 .min(Comparator.comparingInt(String::length));
         System.out.println("String with min length: " + min.get());
         Optional<Integer> max = Stream.of(3,5,1,7)
-                .max((a1, a2) -> a1 -a2);
+                .max((a1, a2) -> a1 - a2);
         System.out.println("Number with max value: " + max.get());
     }
 
