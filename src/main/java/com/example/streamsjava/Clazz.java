@@ -1,9 +1,6 @@
 package com.example.streamsjava;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class Clazz {
@@ -88,9 +85,23 @@ public class Clazz {
         //Ex 6, How can I use Map with Streams? Convert to Set because Set is a Collection > EntrySet() < Set View
         Map<String, Integer> map = new HashMap<>();
         map.put("Alex", 22); map.put("David", 27); map.put("Mary", 30);
+
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        System.out.println("=====");
+        System.out.println(entries);
+        System.out.println("=====");
+
         long mapCount = map.entrySet().stream().count();
         long mapCount2 = map.entrySet().size();
         System.out.println("Size of Map: " + mapCount);
         System.out.println("Size of Map: " + mapCount2);
+
+        //Stream.of() static and generically-typed method
+        Stream<Integer> integerStream = Stream.of(1, 2, 3);
+        System.out.println("Count of Integer: " + integerStream.count());
+        Stream<String> stringStream = Stream.of("A", "B", "C");
+        System.out.println("Count of String: " + stringStream.count());
+        Stream<Dog> dogStream = Stream.of(new Dog(), new Dog(), new Dog());
+        System.out.println("Count of Dog: " + dogStream.count());
     }
 }
