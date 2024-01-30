@@ -45,5 +45,25 @@ public class Clazz {
                     System.out.println("anyMatch: " + el);
                     return el.startsWith("A");
                 });
+
+        System.out.println("""
+                    
+                    ***********************                
+                    ***********************                
+                """);
+
+        //Ex 4, Set a limit for any Stream
+        Stream.of("Alex", "Ben", "Charlie", "April", "Edward")
+                .filter(el -> {
+                    System.out.println("filter1: " + el);
+                    return el.startsWith("B") || el.startsWith("C");
+                })
+                .filter(el -> {
+                    System.out.println("filter2: " + el);
+                    return el.length() > 3;
+                })
+                .limit(1)
+                .forEach(System.out::println);
+
     }
 }
