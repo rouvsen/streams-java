@@ -49,6 +49,12 @@ public class StreamClazz2 {
         System.out.println("matcher1: " + names.stream().anyMatch(pred)); //true, one does
         System.out.println("matcher2: " + names.stream().allMatch(pred)); //false, two doesn't
         System.out.println("matcher3: " + names.stream().noneMatch(pred)); //false, one does
+
+        //forEach is not redundant, and return type of forEach is < void >
+        //Collection interface contains a forEach method,
+        //Stream doesn't implement Iterable that can not be source of forEach
+        Stream<String> howAreYou = Stream.of("Hello, ", "How are ", "you?");
+        howAreYou.forEach(System.out::print);
     }
 
     public static List<Cat> loadCats(String fileName) {
