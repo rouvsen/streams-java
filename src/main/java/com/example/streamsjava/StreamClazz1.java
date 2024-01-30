@@ -3,7 +3,7 @@ package com.example.streamsjava;
 import java.util.*;
 import java.util.stream.Stream;
 
-public class Clazz {
+public class StreamClazz1 {
     public static void main(String[] args) {
 
         //Ex 1
